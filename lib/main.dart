@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: InitialPage(
-
       ),
     );
   }
@@ -54,12 +53,14 @@ class _InitialPageState extends State<InitialPage> {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 270,),
-          Center(child: Text('My App',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w500),)),
-          Center(child: Text('$number',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 22),)),
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height: 270,),
+            Text('My App',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w500),),
+            Text('$number',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 22),),
+          ],
+        ),
       ),
       floatingActionButton: Row(
         children: [
