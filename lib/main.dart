@@ -11,15 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: InitialPage(
-      ),
+      home: InitialPage(),
     );
   }
 }
 
 class InitialPage extends StatefulWidget {
-
-
   InitialPage({super.key});
 
   @override
@@ -28,16 +25,19 @@ class InitialPage extends StatefulWidget {
 
 class _InitialPageState extends State<InitialPage> {
   int number = 0;
+
   void plus() {
     setState(() {
       number++;
     });
   }
+
   void minus() {
     setState(() {
       number--;
     });
   }
+
   void reset() {
     setState(() {
       number = 0;
@@ -56,15 +56,25 @@ class _InitialPageState extends State<InitialPage> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 270,),
-            Text('My App',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w500),),
-            Text('$number',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 22),),
+            SizedBox(
+              height: 270,
+            ),
+            Text(
+              'My App',
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+            ),
+            Text(
+              '$number',
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+            ),
           ],
         ),
       ),
       floatingActionButton: Row(
         children: [
-          SizedBox(width: 220,),
+          SizedBox(
+            width: 220,
+          ),
           FloatingActionButton(onPressed: plus, child: Icon(Icons.add)),
           FloatingActionButton(onPressed: minus, child: Icon(Icons.remove)),
           FloatingActionButton(onPressed: reset, child: Icon(Icons.reset_tv)),
